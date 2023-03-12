@@ -1,0 +1,247 @@
+BAB@NMACADEMY06 MINGW64 ~
+$ cd C:\Users\BAB\Desktop\Albilad\GITpractice
+bash: cd: C:UsersBABDesktopAlbiladGITpractice: No such file or directory
+
+BAB@NMACADEMY06 MINGW64 ~
+$ cd Desktop
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop
+$ cd Albilad/GITpractice/
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice
+$ git init
+Initialized empty Git repository in C:/Users/BAB/Desktop/Albilad/GITpractice/.git/
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Test1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git add *
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Test1.txt
+
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ ls -lrta
+total 5
+drwxr-xr-x 1 BAB 197121  0 Mar 12 14:47 ../
+-rw-r--r-- 1 BAB 197121 17 Mar 12 14:47 Test1.txt
+drwxr-xr-x 1 BAB 197121  0 Mar 12 14:49 ./
+drwxr-xr-x 1 BAB 197121  0 Mar 12 14:52 .git/
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git commit -m "committed 12-03-2023 - test"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'BAB@NMACADEMY06.(none)')
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git config --global user.name "VengateshRK"
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git commit -m "committed 12-03-2023 - test"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'BAB@NMACADEMY06.(none)')
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ ^C
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git config --global user.email "vengatesh.rk@gmail.com"
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git commit -m "committed 12-03-2023 - test"
+[master (root-commit) 41b8eb3] committed 12-03-2023 - test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Test1.txt
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git push add origin https://github.com/VengateshRK/AlbiladBank12mar.git
+fatal: invalid refspec 'https://github.com/VengateshRK/AlbiladBank12mar.git'
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git push add origin "https://github.com/VengateshRK/AlbiladBank12mar.git"
+fatal: invalid refspec 'https://github.com/VengateshRK/AlbiladBank12mar.git'
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git remote add origin "https://github.com/VengateshRK/AlbiladBank12mar.git"
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git push origin master
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 240 bytes | 240.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+
+
+
+
+
+m
+
+
+
+
+
+
+
+New commit updating date 12-march 3:19
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+New test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[master d332b6c] New test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 it.txt
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ ls -lrt
+total 2
+-rw-r--r-- 1 BAB 197121 52 Mar 12 15:15 Test1.txt
+-rw-r--r-- 1 BAB 197121  8 Mar 12 15:21 it.txt
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git push it.txt
+fatal: invalid gitfile format: it.txt
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 280 bytes | 280.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/VengateshRK/AlbiladBank12mar.git
+   3c725f5..d332b6c  master -> master
+
+BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
+$
