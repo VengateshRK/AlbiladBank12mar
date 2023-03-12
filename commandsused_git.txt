@@ -244,4 +244,4 @@ To https://github.com/VengateshRK/AlbiladBank12mar.git
    3c725f5..d332b6c  master -> master
 
 BAB@NMACADEMY06 MINGW64 ~/Desktop/Albilad/GITpractice (master)
-$
+$ Psuh only one file
