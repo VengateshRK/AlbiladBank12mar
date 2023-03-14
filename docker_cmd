@@ -1,0 +1,128 @@
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default "/root/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/root/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/root/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/root/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+
+To get more help with docker, check out our guides at https://docs.docker.com/go/guides/
+[root@ip-172-31-3-38 ~]# docker images
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@ip-172-31-3-38 ~]# systectl start docker
+-bash: systectl: command not found
+[root@ip-172-31-3-38 ~]# systemctl start docker
+[root@ip-172-31-3-38 ~]# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+[root@ip-172-31-3-38 ~]# docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+76769433fd8a: Pull complete
+Digest: sha256:2adf22367284330af9f832ffefb717c78239f6251d9d0f58de50b86229ed1427
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+[root@ip-172-31-3-38 ~]#
+[root@ip-172-31-3-38 ~]#
+[root@ip-172-31-3-38 ~]# docker install ubuntu
+docker: 'install' is not a docker command.
+See 'docker --help'
+[root@ip-172-31-3-38 ~]# docker apply ubuntu
+docker: 'apply' is not a docker command.
+See 'docker --help'
+[root@ip-172-31-3-38 ~]# docker list
+docker: 'list' is not a docker command.
+See 'docker --help'
+[root@ip-172-31-3-38 ~]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       latest    74f2314a03de   13 days ago   77.8MB
+[root@ip-172-31-3-38 ~]# docker run -itd 74f2314a03de
+75f3c6075dc89a04b28a60c888d8dab21ac7eb4d52970c0212ef71f3ba62075b
+[root@ip-172-31-3-38 ~]# docker ps -a
+CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS          PORTS     NAMES
+75f3c6075dc8   74f2314a03de   "/bin/bash"   14 seconds ago   Up 13 seconds             mystifying_panini
+[root@ip-172-31-3-38 ~]# docker exec -it bash 74f2314a03de
+Error: No such container: bash
+[root@ip-172-31-3-38 ~]# docker exec -it 75f3c6075dc8
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+[root@ip-172-31-3-38 ~]# docker ps
+CONTAINER ID   IMAGE          COMMAND       CREATED              STATUS              PORTS     NAMES
+75f3c6075dc8   74f2314a03de   "/bin/bash"   About a minute ago   Up About a minute             mystifying_panini
+[root@ip-172-31-3-38 ~]# docker exec -it 75f3c6075dc8 bash
+root@75f3c6075dc8:/#
+
